@@ -6,4 +6,4 @@
 
 
 number = int(input('Please enter a number:'))
-print(hex(number))
+print(hex(number).replace('0x', ''))
