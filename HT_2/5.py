@@ -7,11 +7,9 @@
                 {'a': 1, 'b': 3, 'd': 5}
 """
 
-first_dict = {'t': 1, 'r': 2, 's': 1, 'k': 2, 'b': 3}
+first_dict = {'t': 1, 'r': 2, 's': 1, 'k': 2, 'b': 1, 'x': 3}
 last_dict = {}
 for key, value in first_dict.items():
-    if value in last_dict.values():
-        pass
-    else:
+    if value not in last_dict.values():
         last_dict[key] = value
 print(last_dict)

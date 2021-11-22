@@ -6,11 +6,11 @@
 """
 
 
-number = int(input('Please enter a number:'))
+number = int(input('Please enter a number: '))
 key_list = [i for i in range(number+1)]
 value_list = []
 for index in key_list:
-    value = index * index
+    value = index ** 2
     value_list.append(value)
 my_dict = dict(zip(key_list, value_list))
 print(my_dict)

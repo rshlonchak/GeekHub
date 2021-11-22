@@ -12,8 +12,5 @@
 dict_1 = {1: 10, 2: 20}
 dict_2 = {3: 30, 4: 40}
 dict_3 = {5: 50, 6: 60}
-my_dict = {}
-my_dict.update(dict_1)
-my_dict.update(dict_2)
-my_dict.update(dict_3)
+my_dict = {**dict_1, **dict_2, **dict_3}
 print(my_dict)
