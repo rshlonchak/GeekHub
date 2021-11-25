@@ -10,17 +10,18 @@
 
 def difference(input_str):
     if 29 < len(input_str) < 51:
-        print(len(input_str))
-
+        print("Довжина рядка ", len(input_str))
+        print("Кількість цифр ", len("".join(filter(str.isdigit, input_str))))
+        print("Кількість букв ", len("".join(filter(str.isalpha, input_str))))
     elif len(input_str) < 30:
         input_str_num = "".join(filter(str.isdigit, input_str))
         sum_num = 0
         for item in list(input_str_num):
             sum_num = sum_num + int(item)
-        print(sum_num)
-        print("".join(filter(str.isalpha, input_str)))
+        print("Сума всих чисел в рядку ", sum_num)
+        print("Рядок без чисел - ", "".join(filter(str.isalpha, input_str)))
     else:
-        print(input_str[50:])
+        print("Рядок без перших 50 елементів - ", input_str[50:])
 
 
 input_string = input("Введіть ваш рядок: ")
