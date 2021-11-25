@@ -4,24 +4,23 @@
 """
 
 
-print("0 при введенні замість знаку завершить функцію")
-while True:
-    operation = input("Введіть знак (+,-,*,/): ")
-    if operation == '0':
-        break
-    if operation in ('+', '-', '*', '/'):
-        first_value = float(input("Перше значення= "))
-        second_value = float(input("Друге значення= "))
-        if operation == '+':
-            print(first_value + second_value)
-        elif operation == '-':
-            print(first_value - second_value)
-        elif operation == '*':
-            print(first_value * second_value)
-        elif operation == '/':
-            if second_value != 0:
-                print(first_value / second_value)
+def calculator(d, x, y):
+    if d in ('+', '-', '*', '/'):
+        if d == '+':
+            print(x + y)
+        elif d == '-':
+            print(x - y)
+        elif d == '*':
+            print(x * y)
+        elif d == '/':
+            if y != 0:
+                print(x / y)
             else:
                 print("Ділення на 0!")
-    else:
-        print("неправильний знак")
+
+
+operation = input("Введіть знак (+,-,*,/): ")
+first_value = float(input("Перше число= "))
+second_value = float(input("Друге число= "))
+
+calculator(operation, first_value, second_value)

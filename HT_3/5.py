@@ -10,17 +10,19 @@
 """
 
 
-def difference():
-    input_x = int(input("Введіть перше число: "))
-    input_y = int(input("Введіть перше число: "))
-    if input_x > input_y:
-        z = input_x - input_y
-        return str(input_x) + " більше нiж " + str(input_y) + " на " + str(z)
-    elif input_x < input_y:
-        z = input_y - input_x
-        return str(input_y) + " більше нiж " + str(input_x) + " на " + str(z)
-    elif input_x == input_y:
-        return str(input_x) + " дорівнює " + str(input_y)
+def difference(x, y):
+
+    if x > y:
+        z = x - y
+        return str(x) + " більше нiж " + str(y) + " на " + str(z)
+    elif x < y:
+        z = y - x
+        return str(y) + " більше нiж " + str(x) + " на " + str(z)
+    elif x == y:
+        return str(x) + " дорівнює " + str(y)
 
 
-print(difference())
+input_x = int(input("Введіть перше число: "))
+input_y = int(input("Введіть перше число: "))
+
+print(difference(input_x, input_y))
