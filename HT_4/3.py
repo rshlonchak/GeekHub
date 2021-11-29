@@ -5,19 +5,12 @@
 
 
 def is_prime(num):
-    if 0 < num < 1000:
-        if num != 2 and num % 2 == 0:
-            return False
-        elif num != 3 and num % 3 == 0:
-            return False
-        elif num != 5 and num % 5 == 0:
-            return False
-        elif num != 7 and num % 7 == 0:
-            return False
-        else:
-            return True
-    else:
+    if num > 1000:
         return "Число поза межами діапазону"
+    for divider in [2, 3, 5, 7]:
+        if num != divider and not num % divider:
+            return False
+    return True
 
 
 number = int(input("Ведіть число: "))

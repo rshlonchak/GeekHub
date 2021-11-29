@@ -5,22 +5,15 @@
 
 
 def prime_list(num_start, num_finish):
-    if num_finish > num_start:
-        list_prime = []
-        for i in range(num_start, num_finish + 1):
-            if i != 2 and i % 2 == 0:
-                continue
-            elif i != 3 and i % 3 == 0:
-                continue
-            elif i != 5 and i % 5 == 0:
-                continue
-            elif i != 7 and i % 7 == 0:
-                continue
-            else:
-                list_prime.append(i)
-    else:
-        return "Початкове значення не може бути більше чим кінцеве"
-    return list_prime
+
+    def is_prime(num):
+
+        for divider in [2, 3, 5, 7]:
+            if num != divider and not num % divider:
+                return False
+        return True
+
+    return [num for num in range(num_start, num_finish + 1) if is_prime(num)]
 
 
 number_start = int(input("Ведіть число початок діапазону: "))

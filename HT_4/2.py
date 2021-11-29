@@ -11,8 +11,7 @@
 def bank(a, years, percents=10):
 
     for i in range(years):
-        percent_a = (a * percents) / 100
-        a = a + percent_a
+        a += (a * percents) / 100
     print(a)
     return a
 

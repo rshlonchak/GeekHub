@@ -7,12 +7,11 @@
 
 
 def number_conversion(num):
-    if num >= 0:
-        num = num ** 2
-        return num
-    else:
-        num = num + 100
-        return num
+    if num > 0:
+        return num ** 2
+    elif num < 0:
+        return num + 100
+    return num
 
 
 number = int(input("Введіть число: "))
