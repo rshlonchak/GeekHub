@@ -14,6 +14,6 @@ def fibonacci(num):
     return ''
 
 
-number = int(input())
+number = int(input('Введіть число: '))
 print(fibonacci(number))
 
