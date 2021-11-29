@@ -19,4 +19,4 @@ def landslide(list_val, val):
 
 my_list = [1, 2, 3, 4, 5]
 
-print(landslide(my_list, 0))
+print(landslide(my_list, -2))
