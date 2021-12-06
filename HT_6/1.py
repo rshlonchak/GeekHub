@@ -24,30 +24,29 @@
 
 import time
 
+GREEN_RED = 'Green    Red'
+YELLOW_RED = 'Yellow   Red'
+RED_GREEN = 'Red      Green'
+
 
 def traffic_lights():
+    timer = 0
     while True:
-        green, red = 1, 1
-        yellow_green, yellow_red = 1, 1
-        while green < 5:
-            print('{0:10}  {1}'.format('Green', 'Red'))
-            green += 1
-            time.sleep(1)
-            while green > 4:
-                print('{0:10}  {1}'.format('Yellow', 'Red'))
-                yellow_green += 1
-                time.sleep(1)
-                while yellow_green > 3:
-                    print('{0:10}  {1}'.format('Red', 'Green'))
-                    yellow_red += 1
-                    time.sleep(1)
-                    while yellow_red > 3:
-                        print('{0:10}  {1}'.format('Yellow', 'Green'))
-                        red += 1
-                        time.sleep(1)
-                        if red > 3:
-                            green, red = 1, 1
-                            yellow_green, yellow_red = 1, 1
+        if 0 <= timer < 4:
+            print(GREEN_RED)
+        elif 4 <= timer < 6:
+            print(YELLOW_RED)
+        elif 6 <= timer < 10:
+            print(RED_GREEN)
+        elif 10 <= timer < 12:
+            print(YELLOW_RED)
+
+        if timer >= 11:
+            timer = 0
+        else:
+            timer += 1
+
+        time.sleep(1)
 
 
 traffic_lights()
