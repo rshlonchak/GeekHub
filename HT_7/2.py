@@ -17,23 +17,27 @@
 
 
 def list_block(filename, number):
-    my_list = []
-    with open(filename, 'r') as file:
-        text_1 = file.read(number)
-        my_list.append(text_1)
+    try:
+        my_list = []
+        with open(filename, 'r') as file:
+            text_1 = file.read(number)
+            my_list.append(text_1)
 
-    with open(filename, 'r') as file:
-        file.seek(len(file.read()) // 2 - number // 2)
-        text_2 = file.read(number)
-        my_list.append(text_2)
+        with open(filename, 'r') as file:
+            file.seek(len(file.read()) // 2 - number // 2)
+            text_2 = file.read(number)
+            my_list.append(text_2)
 
-    with open(filename, 'r') as file:
-        line = len(file.read()) - number
-        file.seek(line)
-        text_3 = file.read(number)
-        my_list.append(text_3)
+        with open(filename, 'r') as file:
+            line = len(file.read()) - number
+            file.seek(line)
+            text_3 = file.read(number)
+            my_list.append(text_3)
 
-    return my_list
+        return my_list
+
+    except ValueError:
+        return "Число більше ніж довжина рядка"
 
 
-print(list_block("2.txt", 3))
+print(list_block("2.txt", 7))
